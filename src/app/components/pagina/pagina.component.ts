@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// Importando componentes del router
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 @Component({
   selector: 'app-pagina',
   templateUrl: './pagina.component.html',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaComponent implements OnInit {
 
-  constructor() { }
+  public nombre: string;
+
+  constructor(
+
+    // Cargar parametros del router
+    private _route: ActivatedRoute, // Sacar parametros de la URL
+    private _router: Router // Redirecciones a otras paginas
+  
+  ) { }
 
   ngOnInit(): void {
+
+    // Observable subscribe()
+    this._route.params.subscribe((params: Params) => {
+      this.nombre = params.nombre
+    });
+
   }
 
 }
