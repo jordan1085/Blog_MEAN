@@ -28,5 +28,10 @@ export class PaginaComponent implements OnInit {
     });
 
   }
+ 
+  redireccion() {
+    this._router.navigate(['/pagina-de-pruebas', 'Jordan']); // Redirigiendo con navigate() / pasando el parametro Jordan 
+  }
+
 
 }
