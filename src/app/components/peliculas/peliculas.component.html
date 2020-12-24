@@ -8,7 +8,8 @@
     <section id="content">
 
         <div class="favorita" *ngIf="favorita">
-            <p>Pelicula favorita: {{favorita}}</p>
+            <p>Pelicula favorita: {{favorita | uppercase}}</p>
+            <p>{{fecha | date: 'dd/MM/yyyy' | par}}</p>
         </div>
 
         <h1 class="subheader">Listado de peliculas</h1>
