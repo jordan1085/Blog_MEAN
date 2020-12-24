@@ -1,5 +1,5 @@
 <app-slider 
-    [nombre]="'Peliculas'"
+    [nombre]="titulo"
     [size]="'small'"
 ></app-slider>
 
@@ -7,45 +7,18 @@
 
     <section id="content">
 
-        <h1 class="subheader">Peliculas</h1>
-        <h2>Directivas ngIf, ngFor, ngStyle, ngClass, ngTemplate</h2>
-        <hr />
-
-        <h2>Mostrar primera peli: {{peliculas[0].title}}</h2>
-
-        <hr />
-
-        <h2>Numero de peliculas</h2>
-
-        <div *ngIf="peliculas.length === 3; then menorquetres else mayorquetres">
-
+        <div class="favorita" *ngIf="favorita">
+            <p>Pelicula favorita: {{favorita}}</p>
         </div>
 
-        <ng-template #menorquetres>
-            <p>Hay menos de 2 pelis</p>
-        </ng-template>
+        <h1 class="subheader">Listado de peliculas</h1>
 
-        <ng-template #mayorquetres>
-            <p>Hay mas de 2 pelis</p>
-        </ng-template>
-
-        <hr />
-
-        <div *ngFor="let pelicula of peliculas; let i = index">
-
-            <div [ngClass]=" { 'subheader' : pelicula.title } ">
-                {{i}} {{pelicula.title}}
-            </div>
-
-            <div [style.color]="pelicula.year > 2020 ? 'green': 'red' ">
-                {{pelicula.year}}
-            </div>
-
-            <div>
-                <img src="{{pelicula.image}}">
-            </div>
-
-
+        <div *ngFor="let pelicula of peliculas">
+    
+            <app-pelicula
+                [pelicula]="pelicula"
+                (MarcarFavorita)="mostrar($event)"
+            ></app-pelicula>
 
         </div>
 
