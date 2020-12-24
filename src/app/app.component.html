@@ -1,19 +1,6 @@
 <app-header></app-header>
-<app-slider 
-[nombre]="HomeText"
-></app-slider>
 
-<div class="center">
-
-    <section id="content">
-
-        <!-- Detecta la ruta y el componente asosiado y lo carga -->
-        <router-outlet></router-outlet>
-
-    </section>
-
-    <app-sidebar></app-sidebar>
-
-</div>
+<!-- Detecta la ruta y el componente asosiado y lo carga -->
+<router-outlet></router-outlet>
 
 <app-footer></app-footer>

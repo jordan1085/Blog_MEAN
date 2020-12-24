@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MEANfrontend';
-  public HomeText = 'Blog de articulos por Jordan Hernando';
 }

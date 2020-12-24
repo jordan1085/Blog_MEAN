@@ -1,41 +1,56 @@
-<h1 class="subheader">Peliculas</h1>
-<h2>Directivas ngIf, ngFor, ngStyle, ngClass, ngTemplate</h2>
-<hr/>
+<app-slider 
+    [nombre]="'Peliculas'"
+    [size]="'small'"
+></app-slider>
 
-<h2>Mostrar primera peli: {{peliculas[0].title}}</h2>
+<div class="center">
 
-<hr/>
+    <section id="content">
 
-<h2>Numero de peliculas</h2>
+        <h1 class="subheader">Peliculas</h1>
+        <h2>Directivas ngIf, ngFor, ngStyle, ngClass, ngTemplate</h2>
+        <hr />
 
-<div *ngIf="peliculas.length === 3; then menorquetres else mayorquetres">
-    
-</div>
+        <h2>Mostrar primera peli: {{peliculas[0].title}}</h2>
 
-<ng-template #menorquetres>
-    <p>Hay menos de 2 pelis</p>
-</ng-template>
+        <hr />
 
-<ng-template #mayorquetres>
-    <p>Hay mas de 2 pelis</p>
-</ng-template>
+        <h2>Numero de peliculas</h2>
 
-<hr/>
+        <div *ngIf="peliculas.length === 3; then menorquetres else mayorquetres">
 
-<div *ngFor="let pelicula of peliculas; let i = index">
+        </div>
 
-    <div [ngClass]=" { 'subheader' : pelicula.title } "> 
-        {{i}} {{pelicula.title}}
-    </div>
+        <ng-template #menorquetres>
+            <p>Hay menos de 2 pelis</p>
+        </ng-template>
 
-    <div [style.color]="pelicula.year > 2020 ? 'green': 'red' ">
-        {{pelicula.year}}
-    </div>
+        <ng-template #mayorquetres>
+            <p>Hay mas de 2 pelis</p>
+        </ng-template>
 
-    <div>
-        <img src="{{pelicula.image}}">  
-    </div>
+        <hr />
+
+        <div *ngFor="let pelicula of peliculas; let i = index">
+
+            <div [ngClass]=" { 'subheader' : pelicula.title } ">
+                {{i}} {{pelicula.title}}
+            </div>
+
+            <div [style.color]="pelicula.year > 2020 ? 'green': 'red' ">
+                {{pelicula.year}}
+            </div>
+
+            <div>
+                <img src="{{pelicula.image}}">
+            </div>
 
 
+
+        </div>
+
+    </section>
+
+    <app-sidebar></app-sidebar>
 
 </div>
