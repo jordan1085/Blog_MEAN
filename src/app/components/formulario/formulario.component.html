@@ -64,6 +64,15 @@
 
         </form>
 
+        <h2 class="subheader">Eventos</h2>
+        
+        <button (click)="onClick()">Click</button>
+        
+        <hr/>
+
+        <input type="text" [(ngModel)]="campo" (blur)="onBlur()">
+        {{campo}}
+
 
     </section>
 
