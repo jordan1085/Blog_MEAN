@@ -7,6 +7,9 @@ import { routing, appRoutingProviders } from './app.routing';
 // Importamos el modulo de formularios
 import { FormsModule } from '@angular/forms';
 
+// Importamos el modulo http
+import { HttpClientModule } from '@angular/common/http';
+
 // Importamos componentes (se importan automaticamenteal con CLI)
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -42,7 +45,8 @@ import { from } from 'rxjs';
   imports: [
     BrowserModule,
     routing, // Cargar modulo
-    FormsModule // Cargar modulo formulario
+    FormsModule, // Cargar modulo formulario
+    HttpClientModule
   ],
   providers: [appRoutingProviders], // Cargar como servicio
   bootstrap: [AppComponent]
