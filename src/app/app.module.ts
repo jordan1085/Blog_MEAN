@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 // Importamos modulo de rutas
 import { routing, appRoutingProviders } from './app.routing';
 
+// Importamos el modulo de formularios
+import { FormsModule } from '@angular/forms';
+
 // Importamos componentes (se importan automaticamenteal con CLI)
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,6 +21,7 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { ErrorComponent } from './components/error/error.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { EsParPipe } from './pipes/par.pipe';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,8 @@ import { EsParPipe } from './pipes/par.pipe';
   ],
   imports: [
     BrowserModule,
-    routing // Cargar modulo
+    routing, // Cargar modulo
+    FormsModule // Cargar modulo formulario
   ],
   providers: [appRoutingProviders], // Cargar como servicio
   bootstrap: [AppComponent]

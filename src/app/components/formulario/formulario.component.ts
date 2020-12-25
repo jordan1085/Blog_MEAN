@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioComponent implements OnInit {
 
-  constructor() { }
+  public user: any;
+
+  constructor() {
+    this.user = {
+      nombre: '',
+      apellido: '',
+      bio: '',
+      genero: '' 
+    }
+  }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    console.log(this.user);
   }
 
 }
