@@ -26,6 +26,7 @@ import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { EsParPipe } from './pipes/par.pipe';
 import { from } from 'rxjs';
 import { ArticlesComponent } from './components/articles/articles.component';
+import { MomentModule } from 'angular2-moment';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ArticlesComponent } from './components/articles/articles.component';
     BrowserModule,
     routing, // Cargar modulo
     FormsModule, // Cargar modulo formulario
-    HttpClientModule
+    HttpClientModule,
+    MomentModule
   ],
   providers: [appRoutingProviders], // Cargar como servicio
   bootstrap: [AppComponent]
