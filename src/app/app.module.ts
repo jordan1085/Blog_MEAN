@@ -25,6 +25,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { EsParPipe } from './pipes/par.pipe';
 import { from } from 'rxjs';
+import { ArticlesComponent } from './components/articles/articles.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { from } from 'rxjs';
     PeliculasComponent,
     ErrorComponent,
     PeliculaComponent,
-    EsParPipe
+    EsParPipe,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,
