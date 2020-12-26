@@ -30,5 +30,10 @@ export class ArticleService {
 
         return this._http.get(this.url+articles);
     }
+    
+    // Metodo para sacar 1 articulo con la id 
+    getArticle(articleId):Observable<any>{
 
+        return this._http.get(this.url+'article/'+articleId);
+    }
 }
