@@ -11,6 +11,7 @@ import { Global } from '../../services/global';
 })
 export class BlogComponent implements OnInit {
 
+  // Crear propiedades
   public articles: Article[];
   public url: string;
 
@@ -38,7 +39,7 @@ export class BlogComponent implements OnInit {
         console.log(error);
       }
     );
-    
+
   }
 
 }
