@@ -27,6 +27,7 @@ import { EsParPipe } from './pipes/par.pipe';
 import { from } from 'rxjs';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { MomentModule } from 'angular2-moment';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { MomentModule } from 'angular2-moment';
     ErrorComponent,
     PeliculaComponent,
     EsParPipe,
-    ArticlesComponent
+    ArticlesComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
