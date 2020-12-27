@@ -11,13 +11,9 @@ export class ArticleService {
     public url: string;
 
     constructor(
-        
         private _http: HttpClient // Cargamos HttpClient 
-
     ) {
-
-        this.url = Global.url;
-    
+        this.url = Global.url;  
     }
 
     getArticles(last:any = null):Observable<any>{
@@ -35,5 +31,10 @@ export class ArticleService {
     getArticle(articleId):Observable<any>{
 
         return this._http.get(this.url+'article/'+articleId);
+    }
+
+    search(searchString):Observable<any> {
+
+        return this._http.get(this.url+'search/'+searchString);
     }
 }
